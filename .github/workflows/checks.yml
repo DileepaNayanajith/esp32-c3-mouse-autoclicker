@@ -1,0 +1,16 @@
+name: Portable logic checks
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  logic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile and run portable behavior tests
+        run: |
+          mkdir -p build
+          g++ -std=c++17 -Wall -Wextra -Werror -pedantic tests/test_settings.cpp -o build/test_settings
+          g++ -std=c++17 -Wall -Wextra -Werror -pedantic tests/test_engine.cpp -o build/test_engine
+          build/test_settings
+          build/test_engine
