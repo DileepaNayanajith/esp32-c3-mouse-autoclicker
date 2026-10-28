@@ -1,6 +1,6 @@
 # Arduino IDE setup for the reference sketch
 
-1. Install Arduino IDE and Espressif's ESP32 board support. Select the ESP32-C3 target appropriate to your board and its USB settings. Record your actual working version; this publication does not claim a verified full build.
+1. Install Arduino IDE and Espressif's ESP32 board support. Select the ESP32-C3 target appropriate to your board and its USB settings. The reference sketch compiled during publication with Arduino-ESP32 3.3.10 for `esp32:esp32:esp32c3` in simulation configuration. Your physical board and USB settings still need verification.
 2. Copy `firmware/MouseAutoClicker/config.example.h` to `config.h` in the same folder. Set a unique 8–63 character AP password. The placeholder is rejected by the sketch and the local file is ignored by Git.
 3. Leave `AUTOCLICKER_SIMULATION` at `1`. Open `MouseAutoClicker.ino`, compile for your actual board and upload. No third-party Arduino libraries are required beyond the board package's WiFi/WebServer libraries.
 4. Open Serial Monitor at 115200 baud, connect to the configured AP and open the address printed there, commonly `http://192.168.4.1/`.
